@@ -9,9 +9,13 @@ const bot = new Bot(BOT_TOKEN || '')
 
 await bot.api.sendMessage(+(GROUP_ID || 0), '👋')
 
-weekly(() => {
+/* weekly(() => {
     remindingMessage()
-},0)
+},0) */
+
+everyMinute(() => {
+    remindingMessage()
+})
 
 const remindingMessage = async () => {
     await bot.api.sendMessage(+(GROUP_ID || 0), reminderText())
