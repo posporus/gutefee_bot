@@ -7,6 +7,8 @@ import { Bot } from './deps.ts'
 
 const bot = new Bot(BOT_TOKEN || '')
 
+await bot.api.sendMessage(+(GROUP_ID || 0), '👋')
+
 weekly(() => {
     remindingMessage()
 },0)
